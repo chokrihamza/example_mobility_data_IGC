@@ -1,3 +1,3 @@
 # example_mobility_data
 example_mobility_data for ISG Student / Master degree 
-https://mybinder.org/v2/gh/chokrihamza/example_mobility_data.git/master?labpath=examples.ipynb
+[![MyBinder v2](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chokrihamza/example_mobility_data/master)
