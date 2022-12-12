@@ -1,54 +1,8 @@
 name: mobility-IGC_By_HAMZA_CHOKRI
 
-  steps:
-      - name: "Set up Python"
-        with:
-          python-version: 3.8
-
-      - name: "Install dependencies"
-        run: |
-          python -m pip install --upgrade pre-commit poetry
-      - name: Lint
-        run: pre-commit run --show-diff-on-failure --files  skmob/tessellation/*
-
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade poetry tox tox-gh-actions
-      - name: "Test and coverage"
-        run: |
-          python3 -m poetry run tox 
-      - name: "Upload Artifact"
-        uses: actions/upload-artifact@v2
-        with:
-          name: code-coverage
-          path: coverage
-          retention-days: 5
-
-  build-docs:
-    needs: test # runs only when lint lint and test steps succeed, and only on master branch
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: "Set up Python"
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-
-      - name: "Install dependencies"
-        run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade poetry sphinx sphinx_rtd_theme sphinx-copybutton
           pip install -r requirements.txt
