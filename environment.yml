@@ -1,0 +1,16 @@
+name: example-mobility-IGC
+
+channels:
+  -conda-forge
+
+dependencies:
+  - python=3.10.7
+  - scikit-mobility
+  - numpy
+  - geopandas
+  - matplotlib
+  - folium
+  - pandas
+  - itertools
+  - shapely
+ 
